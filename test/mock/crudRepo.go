@@ -1,7 +1,7 @@
 package mock
 
 import (
-	"github.com/Becklyn/go-cruddy"
+	"github.com/Becklyn/gocruddy"
 	"github.com/ao-concepts/storage"
 )
 

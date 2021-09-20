@@ -2,7 +2,7 @@ package gocruddy_test
 
 import (
 	"errors"
-	gocruddy "github.com/Becklyn/go-cruddy"
+	"github.com/Becklyn/gocruddy"
 	"github.com/gofiber/fiber/v2"
 	"github.com/stretchr/testify/assert"
 	"testing"

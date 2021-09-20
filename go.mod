@@ -1,4 +1,4 @@
-module github.com/Becklyn/go-cruddy
+module github.com/Becklyn/gocruddy
 
 go 1.16
 

@@ -1,8 +1,8 @@
 package gocruddy_test
 
 import (
-	gocruddy "github.com/Becklyn/go-cruddy"
-	"github.com/Becklyn/go-cruddy/test/mock"
+	"github.com/Becklyn/gocruddy"
+	"github.com/Becklyn/gocruddy/test/mock"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

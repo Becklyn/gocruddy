@@ -1,8 +1,8 @@
 Becklyn gocruddy
 =================
 
-[![CI](https://github.com/Becklyn/go-cruddy/actions/workflows/ci.yml/badge.svg)](https://github.com/Becklyn/go-cruddy/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/Becklyn/go-cruddy/branch/main/graph/badge.svg?token=YO6PLZ30RN)](https://codecov.io/gh/Becklyn/go-cruddy)
+[![CI](https://github.com/Becklyn/gocruddy/actions/workflows/ci.yml/badge.svg)](https://github.com/Becklyn/gocruddy/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/Becklyn/gocruddy/branch/main/graph/badge.svg?token=YO6PLZ30RN)](https://codecov.io/gh/Becklyn/gocruddy)
 
 Made with ❤ by Becklyn
 
@@ -14,13 +14,38 @@ Installation
 ------------
 
 ```shell
-go get -u github.com/Becklyn/go-cruddy
+go get -u github.com/Becklyn/gocruddy
 ```
 
 Usage
 -----
 
-// @todo
+```go
+package main
+
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/Becklyn/gocruddy"
+)
+
+type UserCrud struct {
+	container gocruddy.Container
+}
+
+func (uc *UserCrud)  {
+	
+}
+
+func main() {
+	app := fiber.New()
+	
+	config := 
+
+	RegisterAdminRoutes(app, c)
+
+	app.Listen(":3000")
+}
+```
 
 Development
 -----------

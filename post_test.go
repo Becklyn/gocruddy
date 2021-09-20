@@ -3,9 +3,9 @@ package gocruddy_test
 import (
 	"encoding/json"
 	"errors"
-	"github.com/Becklyn/go-cruddy"
-	"github.com/Becklyn/go-cruddy/test"
-	"github.com/Becklyn/go-cruddy/test/mock"
+	"github.com/Becklyn/gocruddy"
+	"github.com/Becklyn/gocruddy/test"
+	"github.com/Becklyn/gocruddy/test/mock"
 	"github.com/gofiber/fiber/v2"
 	"github.com/stretchr/testify/assert"
 	"gorm.io/gorm"
