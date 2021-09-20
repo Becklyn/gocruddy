@@ -1,6 +1,9 @@
 Becklyn gocruddy
 =================
 
+[![CI](https://github.com/Becklyn/go-cruddy/actions/workflows/ci.yml/badge.svg)](https://github.com/Becklyn/go-cruddy/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/Becklyn/go-cruddy/branch/main/graph/badge.svg?token=YO6PLZ30RN)](https://codecov.io/gh/Becklyn/go-cruddy)
+
 Made with ❤ by Becklyn
 
 A framework that supports you in creating CRUD APIs using go (golang).
