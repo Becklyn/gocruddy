@@ -1,20 +1,20 @@
 package gocruddy
 
-type CRUDError struct {
+type Error struct {
 	err          error
 	responseCode int
 }
 
-func (e CRUDError) Error() string {
+func (e Error) Error() string {
 	return e.err.Error()
 }
 
-func (e CRUDError) Unwrap() error {
+func (e Error) Unwrap() error {
 	return e.err
 }
 
-func NewCRUDError(responseCode int, err error) CRUDError {
-	return CRUDError{
+func NewError(responseCode int, err error) Error {
+	return Error{
 		err:          err,
 		responseCode: responseCode,
 	}

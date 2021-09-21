@@ -138,7 +138,7 @@ func TestPut_MapPutEntryCRUDError(t *testing.T) {
 	config.On("CreateUpdateFilter", mock.Anything).Return(filter).Once()
 	config.On("GetEntityEntry").Return(entry).Once()
 	crudRepo.On("GetByID", mock.Anything, uint(123), mock.AnythingOfType("gocruddy.DatabaseFilter"), entry).Return(entry, nil).Once()
-	config.On("MapPutEntry", entry, mock.Anything, mock.Anything).Return(entry, gocruddy.NewCRUDError(fiber.StatusBadRequest, errors.New("test"))).Once()
+	config.On("MapPutEntry", entry, mock.Anything, mock.Anything).Return(entry, gocruddy.NewError(fiber.StatusBadRequest, errors.New("test"))).Once()
 	log.On("ErrWarn", mock.Anything).Once()
 
 	req := httptest.NewRequest("PUT", "http://example.com/123", nil)

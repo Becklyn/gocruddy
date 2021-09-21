@@ -21,7 +21,7 @@ func Get(c Container, config CrudConfig) fiber.Handler {
 			serialized, err := config.SerializeList(entries, ctx, tx)
 
 			if err != nil {
-				if crudError, ok := err.(CRUDError); ok {
+				if crudError, ok := err.(Error); ok {
 					log.ErrWarn(crudError)
 					return ctx.SendStatus(crudError.responseCode)
 				}

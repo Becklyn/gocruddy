@@ -79,7 +79,7 @@ func TestPost_MapPostEntryCRUDError(t *testing.T) {
 
 	db.On("UseTransaction", mock.Anything).Return(nil).Once()
 	config.On("GetEntityEntry").Return(entry).Once()
-	config.On("MapPostEntry", entry, mock.Anything, mock.Anything).Return(&mock.Entity{}, gocruddy.NewCRUDError(fiber.StatusBadRequest, errors.New("test"))).Once()
+	config.On("MapPostEntry", entry, mock.Anything, mock.Anything).Return(&mock.Entity{}, gocruddy.NewError(fiber.StatusBadRequest, errors.New("test"))).Once()
 	log.On("ErrWarn", mock.Anything).Once()
 
 	req := httptest.NewRequest("POST", "http://example.com/", nil)

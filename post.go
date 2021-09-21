@@ -15,7 +15,7 @@ func Post(c Container, config CrudConfig) fiber.Handler {
 			mapped, err := config.MapPostEntry(config.GetEntityEntry(), ctx, tx)
 
 			if err != nil {
-				if crudError, ok := err.(CRUDError); ok {
+				if crudError, ok := err.(Error); ok {
 					log.ErrWarn(crudError)
 					return ctx.SendStatus(crudError.responseCode)
 				}

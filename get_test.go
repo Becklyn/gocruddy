@@ -109,7 +109,7 @@ func TestGet_SerializeListCRUDError(t *testing.T) {
 	config.On("CreateGetFilter", mock.Anything).Return(filter).Once()
 	config.On("GetEntityEntry").Return(entity).Once()
 	crudRepo.On("GetAllEntries", mock.Anything, mock.AnythingOfType("gocruddy.DatabaseFilter"), entity).Return([]interface{}{}, nil).Once()
-	config.On("SerializeList", []interface{}{}, mock.Anything).Return(fiber.Map{}, gocruddy.NewCRUDError(fiber.StatusBadRequest, errors.New("test"))).Once()
+	config.On("SerializeList", []interface{}{}, mock.Anything).Return(fiber.Map{}, gocruddy.NewError(fiber.StatusBadRequest, errors.New("test"))).Once()
 	log.On("ErrWarn", mock.Anything).Once()
 
 	req := httptest.NewRequest("GET", "http://example.com/", nil)

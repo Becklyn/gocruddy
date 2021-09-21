@@ -9,19 +9,19 @@ import (
 )
 
 func TestNewCRUDError(t *testing.T) {
-	assert.NotNil(t, gocruddy.NewCRUDError(fiber.StatusOK, errors.New("test")))
+	assert.NotNil(t, gocruddy.NewError(fiber.StatusOK, errors.New("test")))
 }
 
 func TestCRUDError_Error(t *testing.T) {
 	err := errors.New("test")
-	crudErr := gocruddy.NewCRUDError(fiber.StatusOK, err)
+	crudErr := gocruddy.NewError(fiber.StatusOK, err)
 
 	assert.Equal(t, err.Error(), crudErr.Error())
 }
 
 func TestCRUDError_Unwrap(t *testing.T) {
 	err := errors.New("test")
-	crudErr := gocruddy.NewCRUDError(fiber.StatusOK, err)
+	crudErr := gocruddy.NewError(fiber.StatusOK, err)
 
 	assert.Equal(t, err, crudErr.Unwrap())
 }
