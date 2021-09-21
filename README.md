@@ -10,6 +10,7 @@ A framework that supports you in creating CRUD APIs using go (golang).
 
 This framework is useful for applications that use [fiber](https://github.com/gofiber/fiber) as router and [gorm](https://gorm.io/) as ORM. 
 
+
 Installation
 ------------
 
@@ -17,35 +18,17 @@ Installation
 go get -u github.com/Becklyn/gocruddy
 ```
 
+
 Usage
 -----
 
-```go
-package main
+You can find a working example in the `example` directory of this repository.
 
-import (
-	"github.com/gofiber/fiber/v2"
-	"github.com/Becklyn/gocruddy"
-)
+gocruddy uses a service container concept.
+The services that are needed by your application will vary depending on your use case.
+Just cast the container to your own interface type.
+The example shows how this could be done.
 
-type UserCrud struct {
-	container gocruddy.Container
-}
-
-func (uc *UserCrud)  {
-	
-}
-
-func main() {
-	app := fiber.New()
-	
-	config := 
-
-	RegisterAdminRoutes(app, c)
-
-	app.Listen(":3000")
-}
-```
 
 Development
 -----------
@@ -80,6 +63,7 @@ Calculate the code coverage:
 ```shell
 make cover
 ```
+
 
 References
 ----------
