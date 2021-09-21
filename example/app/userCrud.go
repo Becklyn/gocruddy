@@ -91,7 +91,7 @@ func (uc *UserCrud) MapPostEntry(entry interface{}, ctx *fiber.Ctx, tx *storage.
 	user, ok := entry.(*User)
 
 	if !ok {
-		return nil, gocruddy.NewError(fiber.StatusBadRequest, err)
+		return nil, gocruddy.NewError(fiber.StatusBadRequest, errors.New(fmt.Sprintf("Cannot insert %T as user", entry)))
 	}
 
 	payload := new(PostUserPayload)
@@ -117,7 +117,7 @@ func (uc *UserCrud) MapPutEntry(entry interface{}, ctx *fiber.Ctx, tx *storage.T
 	user, ok := entry.(*User)
 
 	if !ok {
-		return nil, gocruddy.NewError(fiber.StatusBadRequest, err)
+		return nil, gocruddy.NewError(fiber.StatusBadRequest, errors.New(fmt.Sprintf("Cannot update %T as user", entry)))
 	}
 
 	payload := new(PutUserPayload)

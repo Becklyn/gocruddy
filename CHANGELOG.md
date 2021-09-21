@@ -1,3 +1,9 @@
+vNext
+=====
+
+*   (internal) Fix example: return correct errors.
+
+
 1.0.0
 =====
 
