@@ -72,7 +72,10 @@ func (uc *UserCrud) SerializeList(entries []interface{}, ctx *fiber.Ctx, tx *sto
 		user, ok := entry.(*User)
 
 		if !ok {
-			return nil, errors.New(fmt.Sprintf("Cannot serialize %T as user", entry))
+			return nil, gocruddy.NewError(
+				fiber.StatusInternalServerError,
+				errors.New(fmt.Sprintf("Cannot serialize %T as user", entry)),
+			)
 		}
 
 		// if you need services inside your serialize method, just pass the service container.
