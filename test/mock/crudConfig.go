@@ -36,9 +36,9 @@ func (cc *CrudConfig) CreateDeleteFilter(ctx *fiber.Ctx) gocruddy.DatabaseFilter
 	return cc.Called(ctx).Get(0).(func(gorm *gorm.DB) *gorm.DB)
 }
 
-func (cc *CrudConfig) SerializeList(entries []interface{}, ctx *fiber.Ctx, tx *storage.Transaction) (serialized fiber.Map, err error) {
+func (cc *CrudConfig) SerializeList(entries []interface{}, ctx *fiber.Ctx, tx *storage.Transaction) (serialized interface{}, err error) {
 	args := cc.Called(entries, ctx)
-	return args.Get(0).(fiber.Map), args.Error(1)
+	return args.Get(0), args.Error(1)
 }
 
 func (cc *CrudConfig) MapPostEntry(entry interface{}, ctx *fiber.Ctx, tx *storage.Transaction) (mapped gocruddy.Entry, err error) {

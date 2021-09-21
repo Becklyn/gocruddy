@@ -21,7 +21,7 @@ type Database interface {
 	Begin() (tx *storage.Transaction, err error)
 }
 
-type Repository interface {
+type Repo interface {
 	Insert(tx *storage.Transaction, entry interface{}) (err error)
 	Update(tx *storage.Transaction, entry interface{}) (err error)
 	Delete(tx *storage.Transaction, entry interface{}) (err error)
@@ -29,7 +29,7 @@ type Repository interface {
 }
 
 type CrudRepository interface {
-	Repository
+	Repo
 	GetAllEntries(tx *storage.Transaction, filter DatabaseFilter, t interface{}) (entries []interface{}, err error)
 	GetByID(tx *storage.Transaction, id uint, filter DatabaseFilter, t interface{}) (entry interface{}, err error)
 }

@@ -14,7 +14,7 @@ type CrudConfig interface {
 	CreateGetFilter(ctx *fiber.Ctx) DatabaseFilter
 	CreateUpdateFilter(ctx *fiber.Ctx) DatabaseFilter
 	CreateDeleteFilter(ctx *fiber.Ctx) DatabaseFilter
-	SerializeList(entries []interface{}, ctx *fiber.Ctx, tx *storage.Transaction) (serialized fiber.Map, err error)
+	SerializeList(entries []interface{}, ctx *fiber.Ctx, tx *storage.Transaction) (serialized interface{}, err error)
 	MapPostEntry(entry interface{}, ctx *fiber.Ctx, tx *storage.Transaction) (mapped Entry, err error)
 	MapPutEntry(entry interface{}, ctx *fiber.Ctx, tx *storage.Transaction) (mapped Entry, err error)
 }
