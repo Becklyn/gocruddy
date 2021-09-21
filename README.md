@@ -23,7 +23,7 @@ Usage
 -----
 
 You can find a working example in the `example` directory of this repository.
-The folder also contains a postmark template that demonstrates the API usage.
+The folder also contains a postman template that demonstrates the API usage.
 
 
 Development
