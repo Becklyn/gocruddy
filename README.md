@@ -23,11 +23,7 @@ Usage
 -----
 
 You can find a working example in the `example` directory of this repository.
-
-gocruddy uses a service container concept.
-The services that are needed by your application will vary depending on your use case.
-Just cast the container to your own interface type.
-The example shows how this could be done.
+The folder also contains a postmark template that demonstrates the API usage.
 
 
 Development
