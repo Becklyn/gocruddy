@@ -2,7 +2,13 @@ package gocruddy
 
 type Error struct {
 	err          error
+	respond      bool
 	responseCode int
+}
+
+func (e Error) Respond() Error {
+	e.respond = true
+	return e
 }
 
 func (e Error) Error() string {
@@ -16,6 +22,7 @@ func (e Error) Unwrap() error {
 func NewError(responseCode int, err error) Error {
 	return Error{
 		err:          err,
+		respond:      false,
 		responseCode: responseCode,
 	}
 }

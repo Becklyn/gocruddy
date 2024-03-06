@@ -23,6 +23,11 @@ func Get(c Container, config CrudConfig) fiber.Handler {
 			if err != nil {
 				if crudError, ok := err.(Error); ok {
 					log.ErrWarn(crudError)
+
+					if crudError.respond {
+						ctx.SendString(crudError.Error())
+					}
+
 					return ctx.SendStatus(crudError.responseCode)
 				}
 

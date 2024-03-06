@@ -1,11 +1,12 @@
 package gocruddy_test
 
 import (
+	"testing"
+
 	"github.com/Becklyn/gocruddy"
 	"github.com/Becklyn/gocruddy/test/mock"
 	"github.com/stretchr/testify/assert"
 	"gorm.io/gorm"
-	"testing"
 )
 
 func TestRepository_GetAllEntries(t *testing.T) {
@@ -84,7 +85,7 @@ func TestRepository_GetByID(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, uint(2), entry.(*mock.Entity).ID)
 
-	entry, err = repo.GetByID(tx, 1, func(gorm *gorm.DB) *gorm.DB {
+	_, err = repo.GetByID(tx, 1, func(gorm *gorm.DB) *gorm.DB {
 		return gorm.Where("not-existing = ?")
 	}, &mock.Entity{})
 	assert.NotNil(t, err)
